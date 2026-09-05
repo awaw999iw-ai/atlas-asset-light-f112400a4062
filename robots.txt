@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://awaw999iw-ai.github.io/atlas-asset-light-f112400a4062/sitemap.xml
