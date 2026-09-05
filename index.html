@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>alternative.bg</title>
+<style>
+body{font-family:system-ui;margin:0;background:#0d1117;color:#eef3f8}
+main{max-width:760px;margin:auto;padding:30px 18px}
+.card{background:#161b22;border:1px solid #30363d;border-radius:18px;padding:18px;margin:14px 0}
+button,input{font:inherit;padding:11px;border-radius:10px;border:1px solid #444}
+button{cursor:pointer}
+a{color:#77bdfb}
+small{color:#9ca7b3}
+</style>
+</head>
+<body>
+<main>
+<h1>alternative.bg</h1>
+
+<div class="card">
+<b>Owned digital asset MVP</b>
+<p>Type: CHANGE_MONITOR</p>
+<p>This asset is designed to turn a recurring information need into a reusable digital utility.</p>
+</div>
+
+<div class="card">
+<h2>Workspace</h2>
+<input id="item" placeholder="Add item / URL / note" style="width:70%">
+<button onclick="add()">Add</button>
+<ul id="list"></ul>
+<button onclick="exp()">Export JSON</button>
+</div>
+
+<div class="card">
+<h2>Market origin</h2>
+<p><a href="https://alternative.bg">https://alternative.bg</a></p>
+<small>Market-origin link is evidence input, not ownership of the external source.</small>
+</div>
+</main>
+
+<script>
+const KEY="ASSET-LIGHT-f112400a4062";
+let data=JSON.parse(localStorage.getItem(KEY)||"[]");
+
+function render(){
+  list.innerHTML="";
+  data.forEach((x,i)=>{
+    const li=document.createElement("li");
+    li.textContent=x+" ";
+    const b=document.createElement("button");
+    b.textContent="×";
+    b.onclick=()=>{data.splice(i,1);save()};
+    li.appendChild(b);
+    list.appendChild(li);
+  });
+}
+
+function save(){
+  localStorage.setItem(KEY,JSON.stringify(data));
+  render();
+}
+
+function add(){
+  const v=item.value.trim();
+  if(!v)return;
+  data.push(v);
+  item.value="";
+  save();
+}
+
+function exp(){
+  const blob=new Blob(
+    [JSON.stringify(data,null,2)],
+    {type:"application/json"}
+  );
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="export.json";
+  a.click();
+}
+
+render();
+</script>
+</body>
+</html>

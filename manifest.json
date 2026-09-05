@@ -1,0 +1,38 @@
+{
+  "asset_id": "ASSET-LIGHT-f112400a4062",
+  "created_at_utc": "2026-09-05T15:42:49.640446+00:00",
+  "ownership": "OWNER_OWNED",
+  "transferable": true,
+  "portfolio_candidate": true,
+  "type": "CHANGE_MONITOR",
+  "topic": "alternative.bg",
+  "source_signal_id": "1477ec25b12ace9f6c76",
+  "source_url": "https://alternative.bg",
+  "source_query": "\"alternative to spreadsheet\" tracker",
+  "status": "HYPOTHESIS",
+  "asset_score": 70,
+  "mission_fit": {
+    "owned_asset": true,
+    "requires_employment": false,
+    "requires_manual_service": false,
+    "affiliate_only": false,
+    "zero_spend_build": true,
+    "local_llm": false
+  },
+  "monetization_hypothesis": "paid alerts / premium monitored sources / export",
+  "evidence": {
+    "market_signal": true,
+    "real_users": 0,
+    "verified_revenue_rub": 0,
+    "strong_external_evidence": false
+  },
+  "growth": {
+    "acquisition_attempts": 0
+  },
+  "built_at_utc": "2026-09-05T15:42:49.779856+00:00",
+  "asset_path": "assets/light/ASSET-LIGHT-f112400a4062",
+  "artifact_type": "OWNED_DIGITAL_ASSET_MVP",
+  "local_llm": false,
+  "spend_rub": 0,
+  "reusable": true
+}
